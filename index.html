@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <div class="inputs">
+
+            <input id="input-name" tabindex="1" class="input" type="text" name="name"  autocomplete="off" placeholder="Name..." required>
+
+            <input id="input-last-name" tabindex="2" class="input" type="text" name="last-name"  autocomplete="off" placeholder="Last name..." required>
+
+            <input id="input-phone" tabindex="3" class="input" type="text" name="phone"  autocomplete="off" placeholder="Phone..." required>
+
+        </div>
+
+        <p class="format">Formats: +3-8-0XX-XXX-XX-XX, 3-8-0XX-XXX-XX-XX, 8-0XX-XXX-XX-XX, 0XX-XXX-XX-XX</p>
+        <p class="format">+38(0XX)XXXXXXX, 38(0XX)XXXXXXX, 8(0XX)XXXXXXX, (0XX)XXXXXXX</p>
+        <p class="format">+3 8 0XX XXX XX XX, 380XXXXXXXXX, 80XXXXXXXXX, 0XXXXXXXXX</p>
+        <p class="format">+380XXXXXXXXX, 380XXXXXXXXX, 80XXXXXXXXX, 0XXXXXXXXX</p>
+        <p class="format">...and some more...(UA operators only)</p>
+
+
+        <div class="btn-div">
+            <button id="btn" class="btn" type="button">Add to list</button>
+        </div>
+
+
+
+        <div class="contact-list">
+
+            <p class="list-title">Contact list</p>
+            <div class="table">
+                <div class="column">
+                    <p class="column-title">Name</p>
+                    <ul id="name-list" class="list">
+    
+                    </ul>
+                </div>
+                <div class="column">
+                    <p class="column-title">Last name</p>
+                    <ul id="last-name-list" class="list">
+    
+                    </ul>
+                </div>
+                <div class="column"> 
+                    <p class="column-title">Phone</p>
+                    <ul id="phone-list" class="list">
+    
+                    </ul>
+                </div>
+            </div>
+
+            
+
+        </div>
+    </div>
+</body>
+</html>
