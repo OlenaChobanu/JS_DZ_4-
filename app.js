@@ -46,9 +46,9 @@ function onClick() {
     addElement(liLastNameE, ulLastNameContainerE);
     addElement(liPhoneE, ulPhoneContainerE);
 
-    // clearValue(inpNameE);
-    // clearValue(inpLastNameE);
-    // clearValue(inpPhoneE);
+    clearValue(inpNameE);
+    clearValue(inpLastNameE);
+    clearValue(inpPhoneE);
 
     inpNameE.focus();
 }
