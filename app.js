@@ -6,15 +6,12 @@
 // 6. После нажатия на кнопку - поля очищаются
 // 7. Проверки желательны но не обязательны (номер телефона обычно проверяется регекспом)
 
+const contactContainerE = document.getElementById('contact-items');
 const inpNameE = document.getElementById('input-name');
 const inpLastNameE = document.getElementById('input-last-name');
 const inpPhoneE = document.getElementById('input-phone');
 
 const btnE =  document.getElementById('btn');
-
-const ulNameContainerE = document.getElementById('name-list');
-const ulLastNameContainerE = document.getElementById('last-name-list');
-const ulPhoneContainerE = document.getElementById('phone-list');
 
 btnE.addEventListener('click', onClick);
 
@@ -34,23 +31,31 @@ function onClick() {
         return;
     }
 
-    const liNameE = createElement('li');
-    const liLastNameE = createElement('li');
-    const liPhoneE = createElement('li');
+    const contact = createContact(name, lastName, phoneNumber);
+    addElement(contact, contactContainerE);
 
-    liNameE.textContent = name;
-    liLastNameE.textContent = lastName;
-    liPhoneE.textContent = phoneNumber;
-
-    addElement(liNameE, ulNameContainerE);
-    addElement(liLastNameE, ulLastNameContainerE);
-    addElement(liPhoneE, ulPhoneContainerE);
-
-    // clearValue(inpNameE);
-    // clearValue(inpLastNameE);
-    // clearValue(inpPhoneE);
+    clearValue(inpNameE);
+    clearValue(inpLastNameE);
+    clearValue(inpPhoneE);
 
     inpNameE.focus();
+}
+
+function createContact(name, lastName, phoneNumber) {
+    const containerE = createElement('li');
+    const nameE = createElement('div');
+    const lastNameE = createElement('div');
+    const phoneE = createElement('div');
+    
+    nameE.textContent = name;
+    lastNameE.textContent = lastName;
+    phoneE.textContent = phoneNumber;
+
+    addElement(nameE, containerE);
+    addElement(lastNameE, containerE);
+    addElement(phoneE, containerE);
+
+    return containerE;
 }
 
 function validateString(string) {
@@ -74,8 +79,8 @@ function createElement(tag) {
     return document.createElement(tag);
 }
 
-function addElement(element, container) {
-    return container.append(element);
+function addElement(element, containerE) {
+    return containerE.append(element);
 }
 
 function clearValue(inpElement) {
